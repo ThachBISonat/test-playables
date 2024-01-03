@@ -4259,10 +4259,6 @@
         window._maxsize = mraid.getMaxSize();
 
         const {platform} = window.navigator.userAgentData; 
-        if(platform === 'iOS') {
-          const html = document.documentElement; 
-          html.replace('viewport-fit=cover', '');
-        }
         logmessage("platform" + platform);
 
         var parentdiv = $("main");        
