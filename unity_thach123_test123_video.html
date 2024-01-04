@@ -15,7 +15,8 @@
       video {
         visibility: hidden;
         position: absolute;
-        width: '100%'
+        width: 100%;
+        left: -9999px; /* Position off-screen */
       }
 
       #myCanvas {
@@ -4303,6 +4304,7 @@
     const screenH = 533
     
   const video = document.getElementById("main-video");
+  
     const videoWrapper = document.getElementById("video-wrapper");
       var canvas = document.getElementById('myCanvas');
   var ctx = canvas.getContext('2d');
@@ -4324,7 +4326,7 @@
       }
     })();
   }, 0);
-
+  
     const playableEvents = window.editorParams.freezeData.concat(window.editorParams.loopData).concat(window.editorParams.holdData).sort((event1, event2) => {return event1.startTime - event2.startTime});
     const PLAYBACK = FPS / 1000;
     const intervalTime = 1000 / 24;
@@ -4379,7 +4381,8 @@
   
       video.currentTime = 0;
       video.play();
-      // video.muted = false;
+
+      // video.muted = 'muted;
   
       const endCard = document.getElementById("end-card-overlay");
       endCard.style.display = "none";
